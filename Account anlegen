@@ -1,0 +1,116 @@
+noch nicht fertig !! 
+
+
+import 'dart:io';
+import 'dart:math';
+
+List<Map<String,String>>accounts = []; // Liste zur Speicherung der Account
+List <String>passowrds = []; // Liste zur Speicherung der Passwörte.
+void main (){
+
+while (true){
+
+print("\nWillkome be MysafeLook");
+print("\nWählen Sie eine Option");
+print("1.Account anlegen");
+print("2.Sicheren Passwort-Generator");
+print("3.Gespeicherte Daten anzeigen");
+print("4.Beenden");
+
+String ? choice = stdin.readLineSync();
+
+switch (choice){
+
+case '1':
+   creatAccount();
+   break;
+case '2':
+   generateSecurePassword();
+   break;
+case '3':
+   showSavedData();
+   break;   
+
+case '4':
+  print("Programm beendet. Vielen Dank fürs Nutzen von MysafeLock!");
+  exit(0);   
+
+default: 
+
+  print("Ungültige Auswahl. Bitte versuchen Sie es erneut.");
+
+              }
+
+            }
+
+ } 
+
+void creatAccount (){
+
+print("\n1----- Account-----");
+
+stdout.write("Geben Sie Ihren Namen ein :");
+String ? name = stdin.readLineSync();
+
+stdout.write("Geben Sie Ihr Alter ein :");
+String ? ageInput = stdin.readLineSync();
+
+int ? age = int.tryParse(ageInput??"");
+
+if (age == null){
+
+print("Ungültige Eingabe für das Alter.");
+return;
+
+}
+
+if (age <18){
+
+print ("Kinder-Account für \$name wurde erstellt");
+
+} else {
+
+print ("Erwachsenen-Account für \$name wurde erstellt");  
+}
+
+
+}
+
+void generateSecurePassword (){
+
+print("/n--- Sicherer Passwort-Generator ---");
+
+stdout.write("Geben Sie die gewünschte Passwort-Länge ein :");
+String ? lengthInput = stdin.readLineSync();
+int ? length = int.tryParse(lengthInput ??"");
+
+if (length == null || length < 4){
+
+print("Die Passwort-Länge muss eine Zahl größe als 3 sein.");
+return;
+
+}
+
+String passowrd = generatePassword (length);
+print("Ihr generiertes Passwort lautet : \$password");
+stdout.write("Möchten Sie das Passwort speichern ?(ja/Nein)");
+String? save = stdin.readLineSync();
+if (save?.toLowerCase()=='ja'){
+print("Das Passwort wurde lokal gespeichert");
+}else {
+
+  print("Das Passowrt wurde nicht gespeichert.");
+}
+
+}
+
+String generatePassword (int length){
+
+const String chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#\$%^&*()_+';
+Random random = Random ();
+
+return List.generate(length, (index)=> chars[random.nextInt(chars.length)]).join();
+
+
+
+}
