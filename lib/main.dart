@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/sign_app.dart';
+import 'package:flutter_application_1/Style/app_theme.dart';
+
 
 void main() {
   runApp(const MainApp());
@@ -10,10 +12,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body:SignApp(),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
+     home: const SignApp(),
     );
   }
 }   

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Style/app_colors.dart';
 import 'package:flutter_application_1/gen/assets.gen.dart';
 
 class SignApp extends StatelessWidget {
@@ -7,7 +8,7 @@ class SignApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF3E547B),
+       backgroundColor: AppColors.backgroundColor,
     body: Center(
     child: Column(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -21,10 +22,10 @@ class SignApp extends StatelessWidget {
       width: MediaQuery.of(context).size.width *0.9,
       child: TextField(
       decoration: InputDecoration(
-      prefixIcon: Icon(Icons.email,color: Colors.grey,),
+      prefixIcon: Icon(Icons.email,color: AppColors.grey,),
       hintText: 'Email',
       filled: true,
-      fillColor: Colors.white,
+      fillColor: AppColors.white,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
         borderSide: BorderSide.none,
@@ -39,11 +40,11 @@ class SignApp extends StatelessWidget {
       child: TextField(
       obscureText: true,  
       decoration: InputDecoration(
-      prefixIcon: Icon(Icons.lock,color: Colors.grey,),
+      prefixIcon: Icon(Icons.lock,color: AppColors.grey),
       hintText: 'Password',
       
       filled: true,
-      fillColor: Colors.white,
+      fillColor: AppColors.white,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
         borderSide: BorderSide.none,
@@ -56,47 +57,34 @@ class SignApp extends StatelessWidget {
     Row(
       children: [
         Checkbox(value: false, onChanged: (value){}),
-        Text('Remeber me',style: TextStyle(color: Colors.white),)
+        Text('Remeber me',style: TextStyle(color: AppColors.white),)
       ],
     ),
     SizedBox(height: 20),
 
     //Login Button
-    Align(
-      alignment:Alignment.centerLeft,
-      child:Padding(padding: EdgeInsets.symmetric(horizontal: 20),
-      child: ElevatedButton(onPressed: (){},
-      style: ElevatedButton.styleFrom(
-      backgroundColor: Color(0xFFDE8F1A),
-      padding: EdgeInsets.symmetric(horizontal: 40,vertical: 15),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-      )
-      
-      
-      )
-      , child: Text('LOGIN',style: TextStyle(color: Colors.white),)),
-    )
-
+  Align(
+    alignment: Alignment.topLeft,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: ElevatedButton(
+      onPressed: () {},
+      child: Text('Login'),  
+      ),
     ),
+  ),
+
 
     SizedBox(height: 20),
-
+   // Create Account
     Align(
-      alignment: Alignment.centerLeft,
+      alignment: Alignment.topLeft,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: ElevatedButton(onPressed: (){},
-        style: ElevatedButton.styleFrom(
-        backgroundColor: Color(0xFFDE8F1A),
-        padding: EdgeInsets.symmetric(horizontal: 40,vertical: 15),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        )
-        
-        
-        )
-        , child: Text('Create Account',style: TextStyle(color: Colors.white),)),
+        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        child: ElevatedButton(
+          onPressed: () {},
+          child: Text('Create Account'),  
+        ),
       ),
     ),
 
