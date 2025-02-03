@@ -24,6 +24,7 @@ flutter:
   uses-material-design: true
   assets:
   - assets/splash/Usericon.png
+  - assets/splash/Ammar.png
 
 flutter_native_splash:
   color: "#F19A0D"

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_application_1/Style/app_colors.dart';
 import 'package:flutter_application_1/gen/assets.gen.dart';
+import 'package:flutter_application_1/home_page.dart';
 
 class SignApp extends StatelessWidget {
   const SignApp({super.key});
@@ -68,7 +70,10 @@ class SignApp extends StatelessWidget {
     child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+   
+     Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+      },
       child: Text('Login'),  
       ),
     ),
