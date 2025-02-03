@@ -63,7 +63,8 @@ class HomePage extends StatelessWidget {
      )
      
      
-     )
+     ),
+     Icon(Icons.filter_list,color: AppColors.primaryColor),
 
 
 
@@ -73,7 +74,37 @@ class HomePage extends StatelessWidget {
      ),
 
 
-     )
+     ),
+
+     SizedBox(height: 40),
+
+     //Manage Password Section
+    Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+    Text('Manage Password',style: TextStyle(color: AppColors.white,fontWeight: FontWeight.bold,fontSize: 16),),
+    Text('See All',style: TextStyle(color: AppColors.white,fontSize: 16,fontWeight: FontWeight.bold),)
+
+
+    ],
+    
+    ),
+
+    SizedBox(height: 25),
+
+    Row( 
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+    _buildCategoryCard(Icons.public, 'Social',AppColors.white,Color(0xFF6A73FC)),
+    _buildCategoryCard(Icons.public, 'Apps',AppColors.white,Color(0xFFFACC2F)),
+    _buildCategoryCard(Icons.public, 'Cards',AppColors.white,Color(0xFF7DD5B3)),
+  
+
+    ],
+
+
+    )
+
 
 
 
@@ -95,4 +126,37 @@ class HomePage extends StatelessWidget {
    
     );
   }
+}
+
+Widget _buildCategoryCard(IconData icon,String label,Color scolor,Color color){
+return Container(
+width: 100,
+height: 100,
+decoration: BoxDecoration(
+
+color: color.withAlpha(170),
+borderRadius: BorderRadius.circular(15),
+
+
+),
+child: Column(
+mainAxisAlignment: MainAxisAlignment.center,
+children: [
+Icon(icon,color: scolor,),
+SizedBox(height: 10),
+Text(label,style: TextStyle(fontWeight: FontWeight.bold,color: AppColors.white)),
+
+
+
+],
+),
+
+
+);
+
+
+
+
+
+
 }

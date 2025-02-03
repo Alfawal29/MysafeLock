@@ -17,7 +17,7 @@ class SignApp extends StatelessWidget {
     
     children: [
     //Benuter-Icon 
-    Image.asset(Assets.splash.usericon.path,height: 170,width: 170,fit: BoxFit.cover,),
+    Image.asset(Assets.splash.usericon.path,height: 150,width: 150,fit: BoxFit.cover,),
     SizedBox(height: 40),
     //E-Mail Feld
     SizedBox(
