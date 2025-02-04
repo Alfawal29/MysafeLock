@@ -96,9 +96,9 @@ class HomePage extends StatelessWidget {
                 _buildCategoryCard(
                     Icons.public, 'Social', AppColors.white, Color(0xFF6A73FC)),
                 _buildCategoryCard(
-                    Icons.public, 'Apps', AppColors.white, Color(0xFFFACC2F)),
+                    Icons.app_blocking_outlined, 'Apps', AppColors.white, Color(0xFFFACC2F)),
                 _buildCategoryCard(
-                    Icons.public, 'Cards', AppColors.white, Color(0xFF7DD5B3)),
+                    Icons.credit_card, 'Cards', AppColors.white, Color(0xFF7DD5B3)),
               ],
             ),
             SizedBox(height: 20),
@@ -126,17 +126,80 @@ class HomePage extends StatelessWidget {
               _buildRecentItem('Facebook', 'user.email@gmail.com',Assets.icons.facebook, Colors.blue,AppColors.green),
               _buildRecentItem('Figma', 'user.email@gmail.com', Assets.icons.figma, Colors.blue,AppColors.purple),
               _buildRecentItem('Sanpchat', 'user.email@gmail.com', Assets.icons.snapchat, Colors.blue,AppColors.lightblue),
-              _buildRecentItem('Linkedin', 'user.email@gmail.com', Assets.icons.linkedin, Colors.blue,AppColors.green)
+              _buildRecentItem('Linkedin', 'user.email@gmail.com', Assets.icons.linkedin, Colors.blue,AppColors.green),
+              _buildRecentItem('Instegram', 'user.email@gmail.com', Assets.icons.instegram, Colors.blue,AppColors.purple),
+              _buildRecentItem('Linkedin', 'user.email@gmail.com', Assets.icons.linkedin, Colors.blue,AppColors.green),
 
 
             
 
 
               ],
-            ))
+            )
+            )
+           
           ],
+          
+        ),
+        
+      ),
+     
+     //FloatingActionButton
+     floatingActionButton: Padding(
+       padding: const EdgeInsets.only(top: 35),
+       child: FloatingActionButton(
+        mini: true,
+        onPressed: (){},backgroundColor: AppColors.primaryColor,
+        child: Icon(Icons.add,color: AppColors.white),
+       
+        ),
+        
+     ),
+     
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+      //Bottom Naviation Bar
+      
+      bottomNavigationBar: SizedBox(
+        
+        height: 70,
+        
+        child: BottomAppBar(
+             shape: CircularNotchedRectangle(),
+            notchMargin: 0.5,
+            color: AppColors.white,
+            
+            child: Row(
+            
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+            Padding(
+        padding: const EdgeInsets.only(bottom: 3),
+        child: IconButton(onPressed: (){}, icon:Icon(Icons.home,color: AppColors.primaryColor,size: 32,)),
+            ),
+            Padding(
+        padding: const EdgeInsets.only(bottom: 3),
+        child: IconButton(onPressed: (){}, icon:Icon(Icons.timer,color: AppColors.primaryColor,size: 32)),
+            ),
+            //SizedBox(width: 20),
+            Padding(
+        padding: const EdgeInsets.only(bottom: 3),
+        child: IconButton(onPressed: (){}, icon:Icon(Icons.key,color: AppColors.primaryColor,size: 32)),
+            ),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 3),
+          child: IconButton(onPressed: (){}, icon:Icon(Icons.person,color: AppColors.primaryColor,size: 32)),
+        ),
+        
+        
+        
+        
+            ],
+        
+            ),
         ),
       ),
+
     );
   }
 }

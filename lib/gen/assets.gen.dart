@@ -15,6 +15,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Figma.png
   AssetGenImage get figma => const AssetGenImage('assets/icons/Figma.png');
 
+  /// File path: assets/icons/Instegram.jpg
+  AssetGenImage get instegram =>
+      const AssetGenImage('assets/icons/Instegram.jpg');
+
   /// File path: assets/icons/Linkedin.png
   AssetGenImage get linkedin =>
       const AssetGenImage('assets/icons/Linkedin.png');
@@ -28,7 +32,8 @@ class $AssetsIconsGen {
       const AssetGenImage('assets/icons/snapchat.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [figma, linkedin, facebook, snapchat];
+  List<AssetGenImage> get values =>
+      [figma, instegram, linkedin, facebook, snapchat];
 }
 
 class $AssetsSplashGen {
