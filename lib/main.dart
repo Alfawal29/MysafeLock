@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/sign_app.dart';
 import 'package:flutter_application_1/Style/app_theme.dart';
 
-
 void main() {
   runApp(const MainApp());
 }
@@ -15,8 +14,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-     home: const SignApp(),
+      home: const SignApp(),
     );
   }
-}   
- 
+}

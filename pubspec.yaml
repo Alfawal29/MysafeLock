@@ -25,6 +25,10 @@ flutter:
   assets:
   - assets/splash/Usericon.png
   - assets/splash/Ammar.png
+  - assets/icons/Figma.png
+  - assets/icons/facebook.png
+  - assets/icons/snapchat.png
+  - assets/icons/Linkedin.png
 
 flutter_native_splash:
   color: "#F19A0D"

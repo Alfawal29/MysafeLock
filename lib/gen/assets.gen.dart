@@ -9,6 +9,28 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/Figma.png
+  AssetGenImage get figma => const AssetGenImage('assets/icons/Figma.png');
+
+  /// File path: assets/icons/Linkedin.png
+  AssetGenImage get linkedin =>
+      const AssetGenImage('assets/icons/Linkedin.png');
+
+  /// File path: assets/icons/facebook.png
+  AssetGenImage get facebook =>
+      const AssetGenImage('assets/icons/facebook.png');
+
+  /// File path: assets/icons/snapchat.png
+  AssetGenImage get snapchat =>
+      const AssetGenImage('assets/icons/snapchat.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [figma, linkedin, facebook, snapchat];
+}
+
 class $AssetsSplashGen {
   const $AssetsSplashGen();
 
@@ -26,6 +48,7 @@ class $AssetsSplashGen {
 class Assets {
   Assets._();
 
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsSplashGen splash = $AssetsSplashGen();
 }
 

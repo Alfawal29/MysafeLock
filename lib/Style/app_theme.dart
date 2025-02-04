@@ -7,7 +7,7 @@ class AppTheme {
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.backgroundColor,  
     textTheme: GoogleFonts.urbanistTextTheme().apply(
-      bodyColor: AppColors.grey,
+      bodyColor: AppColors.black,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
