@@ -46,8 +46,11 @@ class $AssetsSplashGen {
   AssetGenImage get usericon =>
       const AssetGenImage('assets/splash/Usericon.png');
 
+  /// File path: assets/splash/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/splash/logo.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [ammar, usericon];
+  List<AssetGenImage> get values => [ammar, usericon, logo];
 }
 
 class Assets {

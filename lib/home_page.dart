@@ -166,7 +166,7 @@ class HomePage extends StatelessWidget {
         
         child: BottomAppBar(
              shape: CircularNotchedRectangle(),
-            notchMargin: 0.5,
+            notchMargin: 0 ,
             color: AppColors.white,
             
             child: Row(

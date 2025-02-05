@@ -18,7 +18,7 @@ class AppTheme {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
-        elevation: 5,
+        elevation: 6,
         textStyle: const TextStyle(
           color: Color.fromARGB(181, 255, 255, 255),
           fontSize: 14,

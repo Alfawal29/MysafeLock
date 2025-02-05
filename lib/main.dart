@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/sign_app.dart';
+import 'package:flutter_application_1/onboarding_screen.dart';
+
 import 'package:flutter_application_1/Style/app_theme.dart';
 
 void main() {
@@ -14,7 +15,8 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const SignApp(),
+      home: const OnboardingScreen(),
     );
   }
 }
+

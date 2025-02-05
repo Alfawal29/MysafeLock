@@ -30,6 +30,7 @@ flutter:
   - assets/icons/snapchat.png
   - assets/icons/Linkedin.png
   - assets/icons/Instegram.jpg
+  - assets/splash/logo.png
 
 flutter_native_splash:
   color: "#F19A0D"
