@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Style/app_colors.dart';
 import 'package:flutter_application_1/gen/assets.gen.dart';
 import 'package:flutter_application_1/sign_app.dart';
+import 'package:flutter_application_1/sign_up.dart';
+
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -58,7 +60,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             SizedBox(height: 40),
 
             ElevatedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>SignApp()),
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()),
             );
             },
             style: ElevatedButton.styleFrom(
