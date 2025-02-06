@@ -73,15 +73,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
               SizedBox(height: 20),
               Row(
                 children: [
-                  Checkbox(
-                      checkColor: AppColors.primaryColor,
-                      activeColor: AppColors.white,
-                      value: _agreeToTerm,
-                      onChanged: (value) {
-                        setState(() {
-                          _agreeToTerm = !_agreeToTerm;
-                        });
-                      }),
+                  CheckboxTheme(
+                    data: CheckboxThemeData(
+                    side: BorderSide(color: AppColors.primaryColor)
+                    ),
+                    child: Checkbox(
+                       activeColor: AppColors.primaryColor,
+                        
+                        value: _agreeToTerm,
+                        onChanged: (value) {
+                          setState(() {
+                            _agreeToTerm = !_agreeToTerm;
+                          });
+                        }),
+                  ),
                   Expanded(
                       child:
                           Text.rich(TextSpan(text: 'Agree to The',style: TextStyle(color: AppColors.white,), children: [

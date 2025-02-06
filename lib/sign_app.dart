@@ -5,9 +5,16 @@ import 'package:flutter_application_1/gen/assets.gen.dart';
 import 'package:flutter_application_1/home_page.dart';
 import 'package:flutter_application_1/sign_up.dart';
 
-class SignApp extends StatelessWidget {
+class SignApp extends StatefulWidget {
   const SignApp({super.key});
 
+  @override
+  State<SignApp> createState() => _SignAppState();
+  
+}
+bool _Remeber_me= false;
+
+class _SignAppState extends State<SignApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +69,17 @@ class SignApp extends StatelessWidget {
             SizedBox(height: 10),
             Row(
               children: [
-                Checkbox(value: false, onChanged: (value) {}),
+                CheckboxTheme(
+                data: CheckboxThemeData(
+                side: BorderSide(color: AppColors.primaryColor)
+
+                ),  
+
+                  child:Checkbox(
+                    activeColor: AppColors.primaryColor,
+                    value: _Remeber_me , onChanged: (value) {setState(() {
+                    _Remeber_me =! _Remeber_me;
+                  });})),
                 Text(
                   'Remeber me',
                   style: TextStyle(color: AppColors.white),
