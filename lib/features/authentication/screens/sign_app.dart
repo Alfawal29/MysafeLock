@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/config/app_colors.dart';
+import 'package:flutter_application_1/features/authentication/screens/sign_up_screen.dart';
+import 'package:flutter_application_1/features/home/screens/home_screen.dart';
 
-import 'package:flutter_application_1/Style/app_colors.dart';
 import 'package:flutter_application_1/gen/assets.gen.dart';
-import 'package:flutter_application_1/home_page.dart';
-import 'package:flutter_application_1/sign_up.dart';
 
 class SignApp extends StatefulWidget {
   const SignApp({super.key});
@@ -12,7 +12,7 @@ class SignApp extends StatefulWidget {
   State<SignApp> createState() => _SignAppState();
   
 }
-bool _Remeber_me= false;
+bool _remeber= false;
 
 class _SignAppState extends State<SignApp> {
   @override
@@ -77,8 +77,8 @@ class _SignAppState extends State<SignApp> {
 
                   child:Checkbox(
                     activeColor: AppColors.primaryColor,
-                    value: _Remeber_me , onChanged: (value) {setState(() {
-                    _Remeber_me =! _Remeber_me;
+                    value: _remeber , onChanged: (value) {setState(() {
+                    _remeber =! _remeber;
                   });})),
                 Text(
                   'Remeber me',
@@ -96,7 +96,7 @@ class _SignAppState extends State<SignApp> {
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage()));
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
                   child: Text('Login'),
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Style/app_colors.dart';
+import 'package:flutter_application_1/config/app_colors.dart';
+import 'package:flutter_application_1/features/authentication/widgets/phone_text_field.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -27,8 +28,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: const Icon(Icons.arrow_back,color: AppColors.primaryColor,size: 28,)),
-        title: Text('Set up Your account',style: TextStyle(color: AppColors.white),),
+            icon: const Icon(
+              Icons.arrow_back,
+              color: AppColors.primaryColor,
+              size: 28,
+            )),
+        title: Text(
+          'Set up Your account',
+          style: TextStyle(color: AppColors.white),
+        ),
         centerTitle: true,
       ),
       body: Padding(
@@ -49,7 +57,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               SizedBox(height: 20),
               _buildTextField(controller: _emailController, hintText: 'Email'),
               SizedBox(height: 20),
-              _buildPhoneField(),
+              PhoneTextField(phoneController: _phoneController),
               SizedBox(height: 20),
               _buildPasswordField(
                   controller: _passwordController,
@@ -75,11 +83,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 children: [
                   CheckboxTheme(
                     data: CheckboxThemeData(
-                    side: BorderSide(color: AppColors.primaryColor)
-                    ),
+                        side: BorderSide(color: AppColors.primaryColor)),
                     child: Checkbox(
-                       activeColor: AppColors.primaryColor,
-                        
+                        activeColor: AppColors.primaryColor,
                         value: _agreeToTerm,
                         onChanged: (value) {
                           setState(() {
@@ -88,35 +94,37 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         }),
                   ),
                   Expanded(
-                      child:
-                          Text.rich(TextSpan(text: 'Agree to The',style: TextStyle(color: AppColors.white,), children: [
-                            WidgetSpan(child: SizedBox(width: 3)),
-                    TextSpan(
-                        text: 'Terms of Use',
-                        style: TextStyle(
-                          color: AppColors.white,fontWeight: FontWeight.bold
-                        )),
+                      child: Text.rich(TextSpan(
+                          text: 'Agree to The',
+                          style: TextStyle(
+                            color: AppColors.white,
+                          ),
+                          children: [
+                        WidgetSpan(child: SizedBox(width: 3)),
+                        TextSpan(
+                            text: 'Terms of Use',
+                            style: TextStyle(
+                                color: AppColors.white,
+                                fontWeight: FontWeight.bold)),
                         WidgetSpan(child: SizedBox(width: 4)),
-                    TextSpan(text: 'and' ,style: TextStyle(color: Colors.white)),
-                     WidgetSpan(child: SizedBox(width: 4)),
-                    TextSpan(
-                        text: 'Privacy Policy',
-                        style: TextStyle(color: AppColors.white,fontWeight: FontWeight.bold))
-                  ])))
+                        TextSpan(
+                            text: 'and', style: TextStyle(color: Colors.white)),
+                        WidgetSpan(child: SizedBox(width: 4)),
+                        TextSpan(
+                            text: 'Privacy Policy',
+                            style: TextStyle(
+                                color: AppColors.white,
+                                fontWeight: FontWeight.bold))
+                      ])))
                 ],
               ),
               SizedBox(height: 20),
-
-              ElevatedButton(onPressed: (){},
-              style: ElevatedButton.styleFrom(
-               padding: EdgeInsets.symmetric(horizontal: 30,vertical: 10)
-
-              ),
-              
-              
-              
-               child:Text('Create Account') )
-
+              ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 30, vertical: 10)),
+                  child: Text('Create Account'))
             ],
           ),
         ),
@@ -128,8 +136,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       {required TextEditingController controller, required String hintText}) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: AppColors.primaryColor,
-        
+        border: Border.all(
+          color: AppColors.primaryColor,
         ),
         borderRadius: BorderRadius.circular(12),
       ),
@@ -138,44 +146,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
         controller: controller,
         style: TextStyle(color: AppColors.white),
         decoration: InputDecoration(
-          
           hintStyle: TextStyle(color: AppColors.white),
           hintText: hintText,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-           focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColors.white),
-          borderRadius: BorderRadius.circular(12),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: AppColors.white),
+            borderRadius: BorderRadius.circular(12),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildPhoneField() {
-    return Container(
-       decoration: BoxDecoration(
-        border: Border.all(color: AppColors.primaryColor,
-        
-        ),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: TextField(
-        
-        cursorColor: AppColors.primaryColor,
-        style: TextStyle(color: AppColors.white),
-        controller: _phoneController,
-        keyboardType: TextInputType.phone,
-        
-        decoration: InputDecoration(
-          hintStyle: TextStyle(color: AppColors.white),
-          prefixIcon: Icon(Icons.flag,color: AppColors.primaryColor,),
-          hintText: 'Phone',
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColors.white),
-          borderRadius: BorderRadius.circular(12),
-          ),
-          
-        ),
-      
       ),
     );
   }
@@ -186,9 +164,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
       required bool obscureText,
       required VoidCallback toggleVisibility}) {
     return Container(
-       decoration: BoxDecoration(
-        border: Border.all(color: AppColors.primaryColor,
-        
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: AppColors.primaryColor,
         ),
         borderRadius: BorderRadius.circular(12),
       ),
@@ -201,12 +179,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
           hintStyle: TextStyle(color: AppColors.white),
           hintText: hintText,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-           focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColors.white),
-          borderRadius: BorderRadius.circular(12),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: AppColors.white),
+            borderRadius: BorderRadius.circular(12),
           ),
           suffixIcon: IconButton(
               onPressed: toggleVisibility,
-              icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility,color: AppColors.primaryColor)),
+              icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility,
+                  color: AppColors.primaryColor)),
         ),
       ),
     );

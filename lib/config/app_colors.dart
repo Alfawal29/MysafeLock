@@ -13,8 +13,8 @@ class AppColors {
 
   static const LinearGradient gradient = LinearGradient(
     
-    colors: [primaryColor,backgroundColor],
-    begin: Alignment.topLeft,
+    colors: [backgroundColor,white],
+    begin: Alignment.topRight,
     end: Alignment.bottomRight
     
     );
