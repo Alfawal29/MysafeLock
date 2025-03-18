@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/config/app_colors.dart';
+import 'package:flutter_application_1/features/authentication/screens/sign_app.dart';
 import 'package:flutter_application_1/features/authentication/widgets/phone_text_field.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -18,6 +20,36 @@ class _SignUpScreenState extends State<SignUpScreen> {
   bool _agreeToTerm = false;
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
+
+  Future<void> _register() async {
+    if (_nameController.text.isEmpty ||
+        _emailController.text.isEmpty ||
+        _phoneController.text.isEmpty ||
+        _passwordController.text.isEmpty ||
+        _confirmPasswordController.text.isEmpty) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('Bitte fülle alle Felder aus')));
+      return;
+    }
+
+    if (_passwordController.text != _confirmPasswordController.text) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Passwörter stimmen nicht überein")));
+      return;
+    }
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('email', _emailController.text);
+    await prefs.setString('password', _passwordController.text);
+
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text('Registrierung erfolgreich')));
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => SignApp(),
+        ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +152,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    _register();
+                  },
                   style: ElevatedButton.styleFrom(
                       padding:
                           EdgeInsets.symmetric(horizontal: 30, vertical: 10)),
