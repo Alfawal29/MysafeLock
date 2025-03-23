@@ -162,18 +162,18 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
 
-      //FloatingActionButton
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(top: 35),
-        child: FloatingActionButton(
-          mini: true,
-          onPressed: () {},
-          backgroundColor: AppColors.primaryColor,
-          child: Icon(Icons.add, color: AppColors.white),
-        ),
-      ),
+      // //FloatingActionButton
+      // floatingActionButton: Padding(
+      //   padding: const EdgeInsets.only(top: 35),
+      //   child: FloatingActionButton(
+      //     mini: true,
+      //     onPressed: () {},
+      //     backgroundColor: AppColors.primaryColor,
+      //     child: Icon(Icons.add, color: AppColors.white),
+      //   ),
+      // ),
 
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
       //Bottom Naviation Bar
       bottomNavigationBar: const Custombottomnavbar(),

@@ -1,44 +1,67 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/config/app_colors.dart';
 
-class Custombottomnavbar extends StatelessWidget {
+class Custombottomnavbar extends StatefulWidget {
   const Custombottomnavbar({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 70,
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: AppColors.gradient,
-        ),
-        child: BottomAppBar(
-          shape: CircularNotchedRectangle(),
-          notchMargin: 19,
-          color: Colors.transparent,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              _buildNavbaricon(Icons.home),
-              _buildNavbaricon(Icons.timer),
-              _buildNavbaricon(Icons.key),
-              _buildNavbaricon(Icons.home),
-            ],
-          ),
-        ),
-      ),
-    );
+  State<Custombottomnavbar> createState() => _CustombottomnavbarState();
+}
+
+class _CustombottomnavbarState extends State<Custombottomnavbar> {
+  int _selectedIndex = 0; // Speichert den akutelle Index
+
+  void _onitemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
-  Widget _buildNavbaricon(IconData icon) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 3),
-      child: IconButton(
-          onPressed: () {},
-          icon: Icon(icon, color: AppColors.backgroundColor, size: 32)),
-    );
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+        backgroundColor: const Color.fromARGB(255, 238, 29, 151),
+        currentIndex: _selectedIndex,
+        onTap: _onitemTapped,
+        selectedItemColor: AppColors.primaryColor,
+        unselectedItemColor: AppColors.white,
+        showSelectedLabels: true,
+        showUnselectedLabels: false,
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                size: 30,
+              ),
+              label: "Home",
+              backgroundColor: AppColors.backgroundColor),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.alarm, size: 30), label: "alarm"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person, size: 30), label: "Person"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.key, size: 30), label: "Key"),
+        ]);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
